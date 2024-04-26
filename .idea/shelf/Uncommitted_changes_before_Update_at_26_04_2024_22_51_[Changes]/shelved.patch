@@ -1,0 +1,42 @@
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from datetime import datetime, date, timedelta\r\n\r\n\r\ndef get_days_from_today(date):\r\n    try:\r\n        choosen_date = today = datetime.strptime(date, '%Y-%m-%d')\r\n        today = datetime.today()\r\n        delta = today - choosen_date\r\n        return delta.days\r\n    except ValueError:\r\n        return ('Wrong format. Use \"YYYY-MM-DD\"')\r\n\r\n\r\nchoosen_date = (\"2024-03-26\")\r\nprint(get_days_from_today(choosen_date))\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	(revision 3ac70052ea64200da1df3a7beb3d4254bcb8b12a)
++++ b/main.py	(date 1714160831258)
+@@ -3,7 +3,7 @@
+ 
+ def get_days_from_today(date):
+     try:
+-        choosen_date = today = datetime.strptime(date, '%Y-%m-%d')
++        choosen_date = datetime.strptime(date, '%Y-%m-%d')
+         today = datetime.today()
+         delta = today - choosen_date
+         return delta.days
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision 3ac70052ea64200da1df3a7beb3d4254bcb8b12a)
++++ b/.idea/vcs.xml	(date 1714160425835)
+@@ -1,5 +1,12 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GitSharedSettings">
++    <option name="FORCE_PUSH_PROHIBITED_PATTERNS">
++      <list>
++        <option value="main" />
++      </list>
++    </option>
++  </component>
+   <component name="VcsDirectoryMappings">
+     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+   </component>
