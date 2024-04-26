@@ -8,7 +8,7 @@ def get_days_from_today(date):
         delta = today - chosen_date
         return delta.days
     except ValueError:
-        return ('Wrong format. Use "YYYY-MM-DD"')
+        return 'Wrong format. Use "YYYY-MM-DD"'
 
 
 date = "2024-03-26"
